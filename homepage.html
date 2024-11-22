@@ -17,15 +17,15 @@
     <script src="https://cdn.jsdelivr.net/npm/moment"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
     <script>
-        window.onload = function() {
+        window.onload = function () {
+            // Ambil balance dari localStorage
             const balance = localStorage.getItem('balance');
             if (balance) {
-                document.querySelector('#overview span').textContent = `Rp.${balance}`;
+                document.getElementById('currentBalance').textContent = `Rp.${balance}`;
+            } else {
+                document.getElementById('currentBalance').textContent = 'Rp.0';
             }
-        };
-
-        window.onload = function () {
-    setTimeout(() => {
+        setTimeout(() => {
         // Overview Section
         document.getElementById("skeleton-overview").style.display = "none";
         document.getElementById("content-overview").style.display = "block";
