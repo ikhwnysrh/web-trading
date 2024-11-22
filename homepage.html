@@ -23,6 +23,23 @@
                 document.querySelector('#overview span').textContent = `Rp.${balance}`;
             }
         };
+
+        window.onload = function () {
+    setTimeout(() => {
+        // Overview Section
+        document.getElementById("skeleton-overview").style.display = "none";
+        document.getElementById("content-overview").style.display = "block";
+
+        // Portfolio Section
+        document.getElementById("skeleton-portfolio").style.display = "none";
+        document.getElementById("content-portfolio").style.display = "block";
+
+        // Transactions Section
+        document.getElementById("skeleton-transactions").style.display = "none";
+        document.getElementById("content-transactions").style.display = "block";
+    }, 2000); // Delay 2 detik untuk simulasi loading
+};
+
     </script>
 </head>
 <body>
@@ -47,52 +64,65 @@
         </nav>
         <main class="content">
             <section id="overview" class="card">
-                <h2>Market Overview</h2>
-                <p style="color: #ffff;">Current Balance: <span style="font-weight: bold;" id="currentBalance">Rp.0</span></p>
-                <br>
-                <div class="market-actions">
-                    <button class="buy-button">Buy</button>
-                    <button class="sell-button">Sell</button>
+                <div id="skeleton-overview" class="skeleton"></div>
+                <div id="content-overview" style="display: none;">
+                    <h2>Market Overview</h2>
+                    <p style="color: #ffff;">Current Balance: <span style="font-weight: bold;" id="currentBalance">Rp.0</span></p>
+                    <br>
+                    <div class="market-actions">
+                        <button class="buy-button">Buy</button>
+                        <button class="sell-button">Sell</button>
+                    </div>
+                    <canvas id="marketChart"></canvas>
                 </div>
-                <canvas id="marketChart"></canvas>
             </section>
+            
             <section id="portfolio" class="card">
-                <h2>My Portfolio</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="color: #ffff">Asset</th>
-                            <th style="color: #ffff">Quantity</th>
-                            <th style="color: #ffff">Price</th>
-                            <th style="color: #ffff">Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="color: #ffff">Bitcoin</td>
-                            <td style="color: #ffff">0.5</td>
-                            <td style="color: #ffff">$40,000</td>
-                            <td style="color: #ffff">$20,000</td>
-                        </tr>
-                        <tr>
-                            <td style="color: #ffff">Ethereum</td>
-                            <td style="color: #ffff">2</td>
-                            <td style="color: #ffff">$2,500</td>
-                            <td style="color: #ffff">$5,000</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div id="skeleton-portfolio" class="skeleton"></div>
+                <div id="content-portfolio" style="display: none;">
+                    <h2>My Portfolio</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="color: #ffff">Asset</th>
+                                <th style="color: #ffff">Quantity</th>
+                                <th style="color: #ffff">Price</th>
+                                <th style="color: #ffff">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="color: #ffff">Bitcoin</td>
+                                <td style="color: #ffff">0.5</td>
+                                <td style="color: #ffff">$40,000</td>
+                                <td style="color: #ffff">$20,000</td>
+                            </tr>
+                            <tr>
+                                <td style="color: #ffff">Ethereum</td>
+                                <td style="color: #ffff">2</td>
+                                <td style="color: #ffff">$2,500</td>
+                                <td style="color: #ffff">$5,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
+            
             <section id="transactions" class="card">
-                <h2>Recent Transactions</h2>
-                <ul>
-                    <li style="color:#ffff">Buy 0.1 BTC @ $42,000 - $4,200</li>
-                    <li style="color:#ffff">Sell 1 ETH @ $2,600 - $2,600</li>
-                    <li style="color:#ffff">Buy 0.05 BTC @ $41,500 - $2,075</li>
-                </ul>
+                <div id="skeleton-transactions" class="skeleton"></div>
+                <div id="content-transactions" style="display: none;">
+                    <h2>Recent Transactions</h2>
+                    <ul>
+                        <li style="color:#ffff">Buy 0.1 BTC @ $42,000 - $4,200</li>
+                        <li style="color:#ffff">Sell 1 ETH @ $2,600 - $2,600</li>
+                        <li style="color:#ffff">Buy 0.05 BTC @ $41,500 - $2,075</li>
+                    </ul>
+                </div>
             </section>
+            
         </main>
     </div>
     <script src="script.js"></script>
+    
 </body>
 </html>

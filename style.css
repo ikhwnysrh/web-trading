@@ -196,3 +196,23 @@ ul li {
 .logout-button:focus {
     outline: none;  /* Menghilangkan outline ketika tombol mendapat fokus */
 }
+
+.skeleton {
+    background: linear-gradient(90deg, #e0e0e02d 25%, #f0f0f02d 50%, #e0e0e02d 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 9px;
+    height: 150px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
