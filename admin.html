@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <script>
+        function saveMoney(event) {
+            event.preventDefault();  // Mencegah form dari pengiriman default (reload halaman)
+
+            const uang = document.querySelector('input[name="uang"]').value;
+            if (uang) {
+                localStorage.setItem('balance', uang);  // Simpan nilai input ke localStorage
+                alert('Jumlah uang berhasil disimpan: Rp.' + uang);  // Tampilkan alert
+            } else {
+                alert('Mohon masukkan jumlah uang yang valid');  // Tampilkan alert jika input kosong
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="saveMoney(event);">
+        <label>Tambahkan Uang:</label>
+        <input type="text" placeholder="Masukkan jumlah uang" name="uang">
+        <button type="submit">Confirm</button>
+        <br>
+        <br>
+        <a href="index.html">Logout</a>
+    </form>
+</body>
+</html>

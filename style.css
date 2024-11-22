@@ -1,0 +1,198 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+}
+
+canvas {
+    width: 300px;
+    height: 300px;
+}
+
+.header {
+    background-color: #013103;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between; /* Pastikan elemen kiri dan kanan disebar */
+    align-items: center;
+}
+
+.wrap {
+    display: flex;
+    gap: 25rem;
+    align-items: center;
+}
+
+/* Layout default (Desktop) */
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+}
+
+h2 {
+    color: #ddd;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.navbar a:hover {
+    background-color: #4CAF50;
+    border-radius: 4px;
+}
+
+.content {
+    background-color: #1f201f;
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: auto auto; /* Dua baris untuk tata letak */
+    grid-template-columns: repeat(12, 1fr); /* 12 kolom untuk fleksibilitas */
+    gap: 1rem;
+}
+
+#overview {
+    background-color: #000000;
+    grid-column: span 12; /* Grafik mengambil seluruh lebar */
+}
+
+#portfolio {
+    grid-column: span 6; /* Setengah lebar pada desktop */
+    background-color: #000000;
+}
+
+#transactions {
+    background-color: #000000;
+    grid-column: span 6; /* Setengah lebar pada desktop */
+}
+
+/* Make the canvas responsive */
+#marketChart {
+    width: 100% !important;  /* Ensure the canvas takes full width of its container */
+    height: auto !important; /* Maintain aspect ratio */
+}
+
+
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Perubahan untuk tampilan mobile (layar kecil) */
+@media (max-width: 768px) {
+    /* Menyusun konten portfolio dan transactions secara vertikal */
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #portfolio, #transactions {
+        grid-column: span 12; /* Membuat portfolio dan transactions mengisi seluruh lebar di mobile */
+    }
+/* 
+    canvas {
+        width: 100%;
+        height: auto;
+    } */
+
+    /* Menyesuaikan kartu */
+    /* .card {
+        margin-bottom: 1rem;
+    } */
+}
+
+.market-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.market-actions button {
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.buy-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.sell-button {
+    background-color: #F44336;
+    color: white;
+}
+
+.buy-button:hover {
+    background-color: #45A049;
+}
+
+.sell-button:hover {
+    background-color: #D32F2F;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th, table td {
+    border: 1px solid #504c4c;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+table th {
+    background-color: #504c4c;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.logout-button {
+    background-color: #F44336;  /* Warna latar belakang merah */
+    color: white;               /* Warna teks putih */
+    border: none;
+    border-radius: 5px;        /* Membuat sudut tombol melengkung */
+    padding: 0.5rem 1rem;       /* Padding di dalam tombol */
+    cursor: pointer;           /* Mengubah cursor menjadi pointer saat hover */
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;  /* Transisi untuk efek hover */
+}
+
+.logout-button:hover {
+    background-color: #D32F2F;  /* Warna latar belakang saat hover */
+    transform: scale(1.05);      /* Memberikan efek pembesaran saat hover */
+}
+
+.logout-button:focus {
+    outline: none;  /* Menghilangkan outline ketika tombol mendapat fokus */
+}

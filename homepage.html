@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <script
+        src="https://kit.fontawesome.com/ba59ca61b6.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+    <script>
+        window.onload = function() {
+            const balance = localStorage.getItem('balance');
+            if (balance) {
+                document.querySelector('#overview span').textContent = `Rp.${balance}`;
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <div class="header-left">
+                <img src="image/logo.png" alt="Logo" width="150">
+            </div>
+            <div class="header-right" style="display: flex; flex-direction: column; justify-content: center;">
+                <i class="fa-regular fa-user" style="margin-bottom: 10px;"> User</i>
+                <a href="index.html"><button class="logout-button">Logout</button></a>
+                
+            </div>
+        </header>
+        
+        
+        
+        <nav class="navbar">
+            <a href="#overview">Overview</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#transactions">Transactions</a>
+        </nav>
+        <main class="content">
+            <section id="overview" class="card">
+                <h2>Market Overview</h2>
+                <p style="color: #ffff;">Current Balance: <span id="currentBalance">Rp.0</span></p>
+                <div class="market-actions">
+                    <button class="buy-button">Buy</button>
+                    <button class="sell-button">Sell</button>
+                </div>
+                <canvas id="marketChart"></canvas>
+            </section>
+            <section id="portfolio" class="card">
+                <h2>My Portfolio</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="color: #ffff">Asset</th>
+                            <th style="color: #ffff">Quantity</th>
+                            <th style="color: #ffff">Price</th>
+                            <th style="color: #ffff">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #ffff">Bitcoin</td>
+                            <td style="color: #ffff">0.5</td>
+                            <td style="color: #ffff">$40,000</td>
+                            <td style="color: #ffff">$20,000</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #ffff">Ethereum</td>
+                            <td style="color: #ffff">2</td>
+                            <td style="color: #ffff">$2,500</td>
+                            <td style="color: #ffff">$5,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="transactions" class="card">
+                <h2>Recent Transactions</h2>
+                <ul>
+                    <li style="color:#ffff">Buy 0.1 BTC @ $42,000 - $4,200</li>
+                    <li style="color:#ffff">Sell 1 ETH @ $2,600 - $2,600</li>
+                    <li style="color:#ffff">Buy 0.05 BTC @ $41,500 - $2,075</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
