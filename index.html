@@ -16,6 +16,11 @@
             <button type="button" onclick="handleLogin()">Confirm</button>
         </form>
 
+        <footer class="footer">
+            <p>&copy; 2024 Fidelity Investment. All rights reserved.</p>
+        </footer>
+        
+
     <script>
         function handleLogin() {
             // Ambil nilai username dan password
@@ -23,10 +28,10 @@
             const password = document.getElementById('password').value;
 
             // Cek kredensial
-            if (username === 'admin' && password === 'admin') {
+            if (username === 'admin' && password === 'fidelity') {
                 // Jika login sebagai admin
                 window.location.href = 'admin.html';
-            } else if (username === 'user' && password === 'user12') {
+            } else if (username === 'user' && password === 'users') {
                 // Jika login sebagai user
                 window.location.href = 'homepage.html';
             } else {

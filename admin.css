@@ -89,3 +89,13 @@ button:hover {
 button:active {
     transform: scale(1);
 }
+
+.footer {
+    color: white;           /* Warna teks */
+    text-align: center;     /* Posisi teks di tengah */
+    padding: 1rem;          /* Ruang di dalam footer */
+    position: fixed;        /* Selalu berada di bagian bawah */
+    bottom: 0;              /* Jarak dari bawah layar */
+    width: 100%;            /* Lebar footer mencakup seluruh layar */
+    font-size: 0.9rem;      /* Ukuran font lebih kecil untuk footer */
+}
