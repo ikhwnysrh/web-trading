@@ -38,7 +38,45 @@
         document.getElementById("skeleton-transactions").style.display = "none";
         document.getElementById("content-transactions").style.display = "block";
     }, 2000); // Delay 2 detik untuk simulasi loading
+
+    const username = getQueryParam('username');
+        if (username) {
+            // Tampilkan username di dropdown
+            const userElement = document.querySelector('.dropdown-content span');
+            if (userElement) {
+                userElement.textContent = ` ${username}`;
+            }
+        }
 };
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+    // Fungsi untuk mengambil nilai dari URL parameters
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+
 
     </script>
 </head>
@@ -48,20 +86,28 @@
             <div class="header-left">
                 <img src="image/logo.png" alt="Logo" width="150">
             </div>
-            <div class="header-right" style="display: flex; flex-direction: column; justify-content: end;">
+            <div class="dropdown">
+                <!-- <span onclick="myFunction()" class="dropbtn">Dropdown</span> -->
+                 <h4 class="dropbtn" onclick="myFunction()">
+                    Profile
+                     <i class="fa-solid fa-caret-down"></i>
+                 </h4>
+                 <div id="myDropdown" class="dropdown-content">
+                    <a class="user-info">
+                        <i class="fa-regular fa-user" style="color: #ffffff;"></i>
+                        <span class="username" style="color: white; font-size: 16px;"></span>
+                    </a>
+                    <a class="user-info">
+                        <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+                        <span style="color: white; font-size: 16px;">Logout</span>
+                    </a>
+                </div> 
+              </div>
+            <!-- <div class="header-right" style="display: flex; flex-direction: column; justify-content: end;">
                 <i class="fa-regular fa-user" style="margin-bottom: 10px; margin-left: 20px;"><span style="font-size: 13px;"> User</span></i>
                 <a href="index.html"><button class="logout-button">Logout</button></a>
-                
-            </div>
+            </div> -->
         </header>
-        
-        
-        
-        <nav class="navbar">
-            <a href="#overview">Overview</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#transactions">Transactions</a>
-        </nav>
         <main class="content">
             <section id="overview" class="card">
                 <div id="skeleton-overview" class="skeleton"></div>

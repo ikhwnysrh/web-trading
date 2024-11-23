@@ -216,3 +216,68 @@ ul li {
     }
 }
 
+/* Dropdown Button */
+/* .dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  } */
+  
+  /* Dropdown button on hover & focus */
+  /* .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
+   */
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    margin: 0;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    border-radius: 5px;
+    display: none;
+    border: 2px solid #1f201f;
+    position: absolute;
+    background-color: #000;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ccc;}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
+  .user-info {
+    display: flex; /* Aktifkan Flexbox */
+    align-items: center; /* Vertikal rata tengah */
+    gap: 5px; /* Jarak antara ikon dan nama user */
+}
+
+.user-info i {
+    font-size: 16px; /* Ukuran ikon */
+}
+
+.username {
+    font-size: 13px; /* Ukuran font nama user */
+}
+

@@ -21,24 +21,25 @@
         </footer>
         
 
-    <script>
-        function handleLogin() {
-            // Ambil nilai username dan password
-            const username = document.getElementById('user').value;
-            const password = document.getElementById('password').value;
-
-            // Cek kredensial
-            if (username === 'admin' && password === 'fidelity') {
-                // Jika login sebagai admin
-                window.location.href = 'admin.html';
-            } else if (username === 'user' && password === 'users') {
-                // Jika login sebagai user
-                window.location.href = 'homepage.html';
-            } else {
-                // Jika kredensial salah
-                alert('Username atau Password salah!');
+        <script>
+            function handleLogin() {
+                // Ambil nilai username dan password
+                const username = document.getElementById('user').value;
+                const password = document.getElementById('password').value;
+        
+                // Validasi login
+                if (username && password === 'users') {
+                    // Redirect ke homepage dengan parameter username
+                    window.location.href = `homepage.html?username=${encodeURIComponent(username)}`;
+                } else if (username === 'admin' && password === 'fidelity') {
+                    // Login sebagai admin
+                    window.location.href = 'admin.html';
+                } else {
+                    // Login gagal
+                    alert('Username atau Password salah!');
+                }
             }
-        }
-    </script>
+        </script>
+        
 </body>
 </html>
